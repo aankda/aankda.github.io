@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>URest Verification | First-Party Test Page</title>
+<meta name="description" content="First-party verification page for URest. Use it to confirm right-click, selection, and copy behavior on a controlled page."/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta name="theme-color" content="#071019"/>
+<meta name="color-scheme" content="dark light"/>
+<link rel="canonical" href="https://aankda.ai/urest/verification.html"/>
+<link rel="icon" type="image/png" sizes="128x128" href="./icon128.png"/>
+<script
+  src="/assets/js/theme-controller.js"
+  data-theme-key="urest-theme"
+  data-default-theme="dark"
+  data-light-theme-color="#f4f1ea"
+  data-dark-theme-color="#071019"
+></script>
+<link rel="stylesheet" href="/assets/css/public-core.css?v=20260322-header-sync"/>
+<link rel="stylesheet" href="./verification.css?v=20260322-header-sync"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="aankda-brand" href="/" aria-label="AANKDA home">
+        <img class="aankda-brand__mark" src="/assets/aankda-mark.svg" alt="" aria-hidden="true"/>
+        <span class="aankda-brand__name">AANKDA</span>
+      </a>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="Page controls">
+          <a class="nav-link" href="./">Home</a>
+          <a class="nav-link" href="mailto:support@aankda.ai">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" aria-pressed="false">
+          <span class="theme-toggle-fallback">Theme</span>
+          <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4.2"/>
+              <path d="M12 1.8V4.1M12 19.9v2.3M4.22 4.22 5.86 5.86M18.14 18.14 19.78 19.78M1.8 12h2.3M19.9 12h2.3M4.22 19.78 5.86 18.14M18.14 5.86 19.78 4.22"/>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.4 14.2A8.6 8.6 0 1 1 9.8 3.6a7.1 7.1 0 0 0 10.6 10.6Z"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="verification-main">
+    <section class="hero">
+      <div class="pill">URest Verification</div>
+      <h1>Check the core behavior directly.</h1>
+      <p class="sub">This first-party page exists to verify URest on a controlled site. If URest is active, right-click, selection, and copy should work in the restricted sections below.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>How to verify</h2>
+        <ol class="steps">
+          <li>Make sure URest is enabled for this site in the popup.</li>
+          <li>Try to right-click and select text in each restricted test area.</li>
+          <li>If URest is working, those interactions should behave normally.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h2>What this page covers</h2>
+        <div class="checks">
+          <div class="check">
+            <strong>Inline attribute restrictions</strong>
+            <span>Elements with <code>oncontextmenu</code> and <code>onselectstart</code>.</span>
+          </div>
+          <div class="check">
+            <strong>JS listener restrictions</strong>
+            <span>Listeners that call <code>event.preventDefault()</code>.</span>
+          </div>
+          <div class="check">
+            <strong>Dynamic content</strong>
+            <span>New nodes inserted after page load with blocking attributes.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card demo-card restricted-css">
+      <div class="label"><span class="dot"></span> CSS restriction test</div>
+      <h2>Section 1: CSS selection lock</h2>
+      <p>This block sets <code>user-select: none</code>. With URest active, you should still be able to select this text.</p>
+    </section>
+
+    <section class="card demo-card" id="inline-lock" oncontextmenu="return false;" onselectstart="return false;">
+      <div class="label"><span class="dot"></span> Inline restriction test</div>
+      <h2>Section 2: Inline handler lock</h2>
+      <p>This card uses inline blocking attributes. With URest active, right-click and text selection should work here.</p>
+    </section>
+
+    <section class="card demo-card" id="listener-lock">
+      <div class="label"><span class="dot"></span> JS restriction test</div>
+      <h2>Section 3: JavaScript listener lock</h2>
+      <p>This section has capturing listeners for <code>contextmenu</code>, <code>selectstart</code>, and <code>copy</code> that call <code>preventDefault()</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Section 4: Dynamic restriction test</h2>
+      <p>Click the button below to add blocked content after page load. URest should still restore right-click and selection on the newly added block.</p>
+      <button id="add-dynamic" class="action-btn" type="button">
+        Add dynamic restricted block
+      </button>
+      <div class="dynamic-output" id="dynamic-output"></div>
+    </section>
+
+    <p class="footer-note">If URest is disabled for this site, the restricted sections above should block normal browser behavior.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-meta">© 2026 AANKDA LLC.</p>
+    <p class="fine-print">URest verification is a first-party test page under <code>aankda.ai/urest</code> and is not indexed.</p>
+  </footer>
+</div>
+
+<script>
+const listenerLock = document.getElementById('listener-lock');
+listenerLock.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+}, true);
+listenerLock.addEventListener('selectstart', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+}, true);
+listenerLock.addEventListener('copy', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+}, true);
+
+document.getElementById('add-dynamic').addEventListener('click', () => {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'card demo-card';
+  wrapper.setAttribute('oncontextmenu', 'return false;');
+  wrapper.innerHTML = `
+    <div class="label"><span class="dot"></span> Dynamic restriction test</div>
+    <h2>Dynamic block</h2>
+    <p>This block was added after page load with an inline <code>oncontextmenu</code> restriction.</p>
+  `;
+  document.getElementById('dynamic-output').appendChild(wrapper);
+});
+</script>
+</body>
+</html>
