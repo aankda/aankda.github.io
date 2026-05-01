@@ -1,0 +1,48 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="132" y1="118" x2="888" y2="916" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A2C3F" />
+      <stop offset="100%" stop-color="#0C1A2A" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(512 626) rotate(90) scale(258)">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect x="72" y="72" width="880" height="880" rx="220" fill="url(#bg)" />
+  <rect x="72" y="72" width="880" height="880" rx="220" fill="url(#glow)" />
+  <rect x="96" y="96" width="832" height="832" rx="196" stroke="white" stroke-opacity="0.08" stroke-width="4" />
+
+  <path
+    d="M512 188L724 478H620V594H404V478H300L512 188Z"
+    stroke="white"
+    stroke-width="46"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+
+  <path d="M512 354V684" stroke="white" stroke-width="46" stroke-linecap="round" />
+  <path d="M512 364V674" stroke="#22D3EE" stroke-width="20" stroke-linecap="round" />
+
+  <path
+    d="M250 690L374 858L512 690L650 858L774 690"
+    stroke="white"
+    stroke-width="50"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M250 690L374 858L512 690L650 858L774 690"
+    stroke="#22D3EE"
+    stroke-width="22"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <circle cx="250" cy="690" r="28" fill="#22D3EE" stroke="white" stroke-width="12" />
+  <circle cx="374" cy="858" r="28" fill="#22D3EE" stroke="white" stroke-width="12" />
+  <circle cx="512" cy="690" r="30" fill="#22D3EE" stroke="white" stroke-width="12" />
+  <circle cx="650" cy="858" r="28" fill="#22D3EE" stroke="white" stroke-width="12" />
+  <circle cx="774" cy="690" r="28" fill="#22D3EE" stroke="white" stroke-width="12" />
+</svg>

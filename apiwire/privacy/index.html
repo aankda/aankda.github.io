@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API Wire Privacy | Local by default</title>
+  <meta
+    name="description"
+    content="API Wire privacy guidance for local-default data handling, optional Cloud Sync, and how private data stays on your device unless you choose to sync it."
+  />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="color-scheme" content="dark" />
+  <link rel="canonical" href="https://aankda.ai/apiwire/privacy/" />
+  <link rel="icon" href="../assets/apiwire-app-icon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/GeistMono-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/public-core.css?v=20260410-shellwide4" />
+  <link rel="stylesheet" href="../site.css?v=20260411-apiwirelegal2" />
+</head>
+<body class="apiwire-legal">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main class="page" id="main">
+    <header class="nav">
+      <div class="container">
+        <a class="nav-logo" href="/" aria-label="AANKDA home">
+          <img class="nav-logo__mark" src="/assets/aankda-mark.svg" alt="" aria-hidden="true" />
+          <span class="nav-logo__wordmark">AANKDA</span>
+        </a>
+
+        <nav class="nav-links" aria-label="API Wire pages">
+          <a href="/apiwire/">Overview</a>
+          <a href="/apiwire/terms/">Terms</a>
+          <a href="/apiwire/support/">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="legal-hero">
+      <div class="container">
+        <div class="legal-hero__copy">
+          <p class="section-label">Privacy</p>
+          <h1>Local by default. Clear about what moves.</h1>
+          <p>
+            API Wire handles request work on your device first. Optional sync only applies when you configure an endpoint and choose to use it.
+          </p>
+          <div class="effective">Effective date: 2026-03-08</div>
+        </div>
+
+        <div class="legal-summary" aria-label="Privacy highlights">
+          <article class="legal-summary-card">
+            <span class="legal-summary-card__eyebrow">Local first</span>
+            <h3>Data stays on your device</h3>
+            <p>Collections, history, settings, and diagnostics stay local by default.</p>
+          </article>
+
+          <article class="legal-summary-card highlight">
+            <span class="legal-summary-card__eyebrow">Optional sync</span>
+            <h3>Cloud Sync only happens when you choose it</h3>
+            <p>Sync is only active against an endpoint you configure yourself.</p>
+          </article>
+
+          <article class="legal-summary-card">
+            <span class="legal-summary-card__eyebrow">No default backend</span>
+            <h3>No AANKDA sync service is published</h3>
+            <p>This repository does not publish a default AANKDA-operated sync endpoint.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-grid" aria-label="API Wire privacy sections">
+      <div class="container">
+        <article class="legal-card highlight">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <rect x="9" y="11" width="6" height="5" rx="1"></rect>
+                <path d="M12 11V9a2 2 0 0 1 2-2"></path>
+              </svg>
+            </span>
+            What stays on your device
+          </h3>
+          <p>By default, API Wire processes and stores request collections and history, local environment values and settings, and local diagnostics and log data on your device.</p>
+        </article>
+
+        <article class="legal-card">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M2 2l20 20"></path>
+                <path d="M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193"></path>
+                <path d="M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07"></path>
+              </svg>
+            </span>
+            What is not sent by default
+          </h3>
+          <p>When you stay in local-only mode, API Wire does not send collections, workspace environment metadata, or local settings snapshots to a remote service by default.</p>
+        </article>
+
+        <article class="legal-card">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 6L6 18"></path>
+                <path d="m6 6 3 3"></path>
+                <path d="m15 15 3 3"></path>
+                <path d="m9 3 3 3-5 5-3-3z"></path>
+                <path d="m15 21-3-3 5-5 3 3z"></path>
+              </svg>
+            </span>
+            Cloud Sync is optional
+          </h3>
+          <p>If you configure a sync endpoint and choose to use Cloud Sync, API Wire can transmit workspace snapshot collection data, workspace environment metadata, and selected local settings snapshots.</p>
+        </article>
+
+        <article class="legal-card">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="7" y="11" width="10" height="7" rx="1"></rect>
+                <path d="M9 11V8a3 3 0 0 1 6 0v3"></path>
+              </svg>
+            </span>
+            Secrets and secure values
+          </h3>
+          <p>Secrets are intended to be stored through OS keyring integrations. Secure values are not exported from workspace metadata as plaintext.</p>
+        </article>
+
+        <article class="legal-card">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+              </svg>
+            </span>
+            No default AANKDA backend
+          </h3>
+          <p>If you point Cloud Sync at an endpoint run by your organization or a third party, that operator's privacy terms apply separately.</p>
+        </article>
+
+        <article class="legal-card highlight">
+          <h3>
+            <span class="legal-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12h14"></path>
+                <path d="M12 5v14"></path>
+              </svg>
+            </span>
+            Your control
+          </h3>
+          <p>You control the local data files stored by API Wire and can remove them from your device at any time.</p>
+          <p class="contact-line">Privacy questions can be sent to <a class="contact-link" href="mailto:privacy@aankda.ai">privacy@aankda.ai</a>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="legal-strip" aria-label="Privacy change note">
+      <div class="container">
+        <div class="legal-strip__icon" aria-hidden="true">
+          <svg viewBox="0 0 18 18">
+            <path d="M9 2l1.8 5.5H17l-4.9 3.5 1.9 5.5L9 13l-5 3.5 1.9-5.5L1 7.5h6.2z"></path>
+          </svg>
+        </div>
+        <div class="legal-strip__copy">
+          <p class="legal-strip__label">Privacy behavior changes?</p>
+          <h3>This page changes when the behavior changes.</h3>
+          <p>Questions go to <a class="contact-link" href="mailto:privacy@aankda.ai">privacy@aankda.ai</a>.</p>
+        </div>
+        <a class="legal-strip__link" href="mailto:privacy@aankda.ai">privacy@aankda.ai ↗</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="footer-copy">© 2026 AANKDA LLC</span>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/apiwire/">Overview</a>
+          <a href="/apiwire/terms/">Terms</a>
+          <a href="/apiwire/support/">Support</a>
+        </nav>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

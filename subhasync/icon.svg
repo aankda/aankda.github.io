@@ -1,0 +1,108 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 1024 1024"
+  fill="none"
+>
+  <rect
+    width="1024"
+    height="1024"
+    rx="224"
+    fill="#FBF2DD"
+  />
+
+  <circle
+    cx="276"
+    cy="212"
+    r="248"
+    fill="#FFFFFF"
+    opacity="0.3"
+  />
+
+  <circle
+    cx="860"
+    cy="840"
+    r="264"
+    fill="#E9C98F"
+    opacity="0.26"
+  />
+
+  <rect
+    x="220"
+    y="224"
+    width="584"
+    height="28"
+    rx="14"
+    fill="#B97A19"
+    opacity="0.18"
+  />
+
+  <rect
+    x="220"
+    y="214"
+    width="584"
+    height="28"
+    rx="14"
+    fill="#D79A30"
+    opacity="0.94"
+  />
+
+  <circle
+    cx="556"
+    cy="496"
+    r="188"
+    fill="#FFE0A1"
+    opacity="0.26"
+  />
+
+  <circle
+    cx="556"
+    cy="496"
+    r="152"
+    fill="#F2B256"
+  />
+
+  <circle
+    cx="522"
+    cy="450"
+    r="92"
+    fill="#FFD88E"
+    opacity="0.72"
+  />
+
+  <circle
+    cx="596"
+    cy="540"
+    r="110"
+    fill="#E89637"
+    opacity="0.12"
+  />
+
+  <path
+    fill="#1C212A"
+    fill-rule="evenodd"
+    d="M 406 260
+       A 282 282 0 1 0 406 824
+       A 282 282 0 1 0 406 260
+       Z
+       M 556 210
+       A 226 226 0 1 1 556 662
+       A 226 226 0 1 1 556 210
+       Z"
+    clip-rule="evenodd"
+  />
+
+  <path
+    fill="#3A4354"
+    fill-rule="evenodd"
+    d="M 430 234
+       A 250 250 0 1 0 430 734
+       A 250 250 0 1 0 430 234
+       Z
+       M 556 210
+       A 226 226 0 1 1 556 662
+       A 226 226 0 1 1 556 210
+       Z"
+    clip-rule="evenodd"
+    opacity="0.14"
+  />
+</svg>

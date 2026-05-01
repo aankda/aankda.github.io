@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URest | Restore Right-Click, Copy, and Selection</title>
+  <meta name="description" content="URest restores right-click, copy, and text selection on blocked pages. Local-only execution, no telemetry, and per-site control.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#071019">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://aankda.ai/urest/">
+  <link rel="icon" type="image/png" sizes="128x128" href="./icon128.png">
+  <link rel="preload" href="/assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/InstrumentSerif-Regular-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="URest | Restore Right-Click, Copy, and Selection">
+  <meta property="og:description" content="Restore native browser controls on blocked pages with a local-only extension that keeps telemetry out of the picture.">
+  <meta property="og:url" content="https://aankda.ai/urest/">
+  <meta property="og:image" content="https://aankda.ai/urest/og-image.png">
+  <meta property="og:image:width" content="1400">
+  <meta property="og:image:height" content="560">
+  <meta property="og:image:alt" content="URest browser extension preview with privacy-first messaging.">
+  <meta property="og:site_name" content="URest">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="URest | Restore Right-Click, Copy, and Selection">
+  <meta name="twitter:description" content="Local-only browser restoration for pages that block right-click, copy, and text selection.">
+  <meta name="twitter:image" content="https://aankda.ai/urest/og-image.png">
+  <meta name="twitter:image:alt" content="URest browser extension preview with privacy-first messaging.">
+  <script
+    src="/assets/js/theme-controller.js"
+    data-theme-key="urest-theme"
+    data-default-theme="dark"
+    data-light-theme-color="#f4f1ea"
+    data-dark-theme-color="#071019"
+  ></script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "URest",
+          "applicationCategory": "BrowserExtension",
+          "operatingSystem": "Chrome, Firefox",
+          "description": "Independent local-first extension that restores right-click, copy, and text selection on sites that block them.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "AANKDA LLC",
+            "url": "https://aankda.ai/"
+          },
+          "url": "https://aankda.ai/urest/",
+          "image": "https://aankda.ai/urest/og-image.png"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Does URest collect or transmit data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. URest runs locally in your browser and does not collect, store, or transmit browsing data."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why does URest need access to all sites?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It needs site access to restore blocked browser behavior on the pages you visit. That access is used to modify page behavior, not to send data anywhere."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I disable URest on a site?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the popup toggle or the context menu shortcut to disable URest on the current site."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can URest break a site?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Some sites rely on restrictive handlers for custom UI. If a page feels off, disable URest for that site and continue normally."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+  <link rel="stylesheet" href="/assets/css/public-core.css?v=20260410-shellwide4">
+  <link rel="stylesheet" href="./assets/site.css?v=20260410-shellwide4">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="aankda-brand" href="/" aria-label="AANKDA home">
+        <img class="aankda-brand__mark" src="/assets/aankda-mark.svg" alt="" aria-hidden="true">
+      </a>
+
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="Main navigation">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/products/">Products</a>
+          <a class="nav-link" href="/about/">About</a>
+        </nav>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" aria-pressed="false">
+          <span class="theme-toggle-fallback">Theme</span>
+          <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4.25"></circle>
+              <path d="M12 2.75v2.5M12 18.75v2.5M21.25 12h-2.5M5.25 12h-2.5M18.54 5.46l-1.77 1.77M7.23 16.77l-1.77 1.77M18.54 18.54l-1.77-1.77M7.23 7.23 5.46 5.46"></path>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page-main">
+    <section class="hero hero--stacked" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-brand" aria-hidden="true">
+          <img class="hero-mark-large" src="./icon128.png" alt="">
+        </div>
+        <h1 class="hero-title hero-title--brand" id="hero-title">URest</h1>
+        <p class="hero-lead hero-lead--tagline">Universal restoration for the modern web.</p>
+        <p class="hero-body">Restore browser defaults on pages that suppress them, locally and without telemetry.</p>
+
+        <div class="cta-row" aria-label="Install URest">
+          <a class="store-badge-link" href="https://chromewebstore.google.com/detail/urest/cjhpdhipbocaogbgohhagdkjhmfdngoc?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Add URest to Chrome">
+            <img class="store-badge-image" src="/assets/badges/chrome-web-store-badge.png" alt="Available in the Chrome Web Store" loading="eager" decoding="async">
+          </a>
+          <a class="browser-link browser-link--firefox" href="https://addons.mozilla.org/en-US/firefox/addon/urest/" target="_blank" rel="noopener noreferrer">
+            <img class="browser-link__icon" src="/assets/badges/firefox-browser-logo.svg" alt="" aria-hidden="true">
+            <span>Also available in Firefox</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="metric-grid metric-grid--hero" aria-label="Core product traits">
+        <div class="metric-card">
+          <span class="metric-label">Execution</span>
+          <strong>Local only</strong>
+          <p>Runs in the browser.</p>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Control</span>
+          <strong>Per-site off switch</strong>
+          <p>Disable when a page needs its own UI.</p>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Scope</span>
+          <strong>Focused restoration</strong>
+          <p>Targets restrictive handlers, not the whole page.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="principles-title">
+      <div class="section-head">
+        <h2 class="section-title" id="principles-title">How it works.</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-kicker">01</span>
+          <h3>Find the restrictions that matter.</h3>
+          <p>Detect the handlers blocking right-click, copy, and selection.</p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">02</span>
+          <h3>Return the browser’s default behavior.</h3>
+          <p>Restore native behavior without flattening the rest of the page.</p>
+        </article>
+        <article class="card">
+          <span class="card-kicker">03</span>
+          <h3>Step out fast when a site needs it.</h3>
+          <p>Turn it off for the current site from the popup or context menu.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="proof-title">
+      <div class="section-head section-head--media">
+        <div class="section-head__copy">
+          <h2 class="section-title" id="proof-title">See it in action.</h2>
+          <p class="section-copy">Watch URest restore the browser's default behavior on a restricted page.</p>
+          <a class="support-link" href="./verification.html">Run verification</a>
+        </div>
+
+        <div class="hero-panel section-demo" aria-label="Animated demo">
+          <div class="hero-media">
+            <video
+              class="lazy-demo"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="./assets/screenshots/screenshot3-poster.webp"
+              aria-label="URest restoring right-click and selection on a restricted page"
+              data-video-src="./demo.mp4"
+              data-fallback-src="./demo.gif"
+            ></video>
+            <noscript>
+              <img
+                src="./assets/screenshots/screenshot3-poster.webp"
+                alt="URest restoring right-click and selection on a restricted page"
+                loading="lazy"
+                decoding="async"
+              >
+            </noscript>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compatibility-title">
+      <div class="section-head">
+        <h2 class="section-title" id="compatibility-title">Made for difficult pages.</h2>
+      </div>
+
+      <div class="chip-list" aria-label="Validated surfaces">
+        <span class="chip">Notion</span>
+        <span class="chip">Salesforce</span>
+        <span class="chip">Google Docs</span>
+        <span class="chip">Figma</span>
+        <span class="chip">Wikipedia</span>
+      </div>
+      <p class="section-copy">Best effort elsewhere.</p>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="section-head">
+        <h2 class="section-title" id="faq-title">Quick answers.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Does URest collect or transmit data?</summary>
+          <p>No. URest runs locally and does not send browsing data anywhere.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Why does URest need access to all sites?</summary>
+          <p>To restore blocked browser behavior on the page you are visiting.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I disable URest on a site?</summary>
+          <p>Use the popup toggle or the context menu shortcut.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can URest break a site?</summary>
+          <p>Sometimes. If a page feels off, disable URest for that site.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <p class="footer-meta">© 2026 AANKDA LLC.</p>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="./privacy.html">Privacy</a>
+        <a href="mailto:support@aankda.ai">Support</a>
+      </nav>
+    </div>
+    <p class="fine-print">Browser names, browser-store names, and related marks are trademarks of their respective owners. This site uses self-hosted fonts, local assets, and no analytics.</p>
+    <p class="support-note">URest is built solo, free to use, kept simple, and if it's been useful, <a href="https://ko-fi.com/aankda" target="_blank" rel="noopener noreferrer">a coffee is always appreciated</a> ☕</p>
+  </footer>
+
+  <script src="./assets/site.js" defer></script>
+</body>
+</html>
